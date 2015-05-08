@@ -195,7 +195,13 @@
           if (key) {
             keys= key.split('.');
             result = obj;
-            keys.forEach(function(k) { result = result[k]; });
+            keys.forEach(function(k) { 
+              if (result) {
+                result = result[k]; 
+              } else {
+                result = null;
+              }
+            });
           }
           else {
             result = obj;
